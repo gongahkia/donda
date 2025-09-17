@@ -1,0 +1,7 @@
+/* Styles injected by content script */
+
+.donda-highlight {
+  outline: 3px solid orange !important;
+  transition: outline-offset 0.3s ease-in-out;
+  outline-offset: 3px;
+}
