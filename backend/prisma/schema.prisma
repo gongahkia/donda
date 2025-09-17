@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String    @id @default(cuid())
+  email       String    @unique
+  createdAt   DateTime  @default(now())
+  queries     Query[]
+  workflows   Workflow[]
+  preferences Json?
+}
+
+model Query {
+  id          String    @id @default(cuid())
+  text        String
+  userId      String
+  website     String
+  responses   Json
+  createdAt   DateTime  @default(now())
+  user        User      @relation(fields: [userId], references: [id])
+}
+
+model Workflow {
+  id          String    @id @default(cuid())
+  name        String
+  steps       Json
+  website     String
+  userId      String
+  createdAt   DateTime  @default(now())
+  user        User      @relation(fields: [userId], references: [id])
+}
+
+model Website {
+  id          String   @id @default(cuid())
+  domain      String   @unique
+  metadata    Json?
+  createdAt   DateTime @default(now())
+}
