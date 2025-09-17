@@ -1,0 +1,4 @@
+export const API_LIMITS = {
+  QUERY_PER_MINUTE: 60,
+  MAX_WORKFLOW_STEPS: 20,
+};
