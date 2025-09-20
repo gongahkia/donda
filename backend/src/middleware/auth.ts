@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { verifyJwt } from "../config/jwt";
 
 export interface AuthenticatedRequest extends Request {
-  user?: { id: string; email: string };
+  user?: { userId: string; email: string };
 }
 
 export function authMiddleware(
@@ -17,7 +17,7 @@ export function authMiddleware(
   }
 
   const token = authHeader.split(" ")[1];
-  const payload = verifyJwt<{ id: string; email: string }>(token);
+  const payload = verifyJwt<{ userId: string; email: string }>(token);
 
   if (!payload) {
     return res.status(401).json({ message: "Unauthorized" });
