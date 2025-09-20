@@ -10,18 +10,16 @@
 
 ## Stack
 
-*   *Frontend*: [React](https://react.dev/), [Vite](https://vite.dev/), [Zustand](https://zustand-demo.pmnd.rs/), [Framer Motion](https://www.framer.com/motion/), [Headless UI](https://headlessui.com/), [Tailwind CSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/)
-*   *Backend*: [Node.js](https://nodejs.org/en), [Express.js](https://expressjs.com/), [Socket.io](https://socket.io/), [Prisma](https://www.prisma.io/) (PostgreSQL ORM), [JWT](https://jwt.io/), [TypeScript](https://www.typescriptlang.org/)
-*   *Browser Extension*: [React](https://react.dev/), [Webpack](https://webpack.js.org/), [TypeScript](https://www.typescriptlang.org/)
-*   *Database*: [PostgreSQL](https://www.postgresql.org/)
-*   *Package Management*: [PNPM](https://pnpm.io/) (implied by monorepo structure, though `npm` is used in scripts)
-*   *Containerization*: [Docker](https://www.docker.com/)
+* *Frontend*: [React](https://react.dev/), [Vite](https://vite.dev/), [Zustand](https://zustand-demo.pmnd.rs/), [Framer Motion](https://www.framer.com/motion/), [Headless UI](https://headlessui.com/), [Tailwind CSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/)
+* *Backend*: [Node.js](https://nodejs.org/en), [Express.js](https://expressjs.com/), [Socket.io](https://socket.io/), [Prisma](https://www.prisma.io/)
+* *DB*: [PostgreSQL](https://www.postgresql.org/)
+* *Auth*: [JWT](https://jwt.io/)
+* *Browser Extension*: [React](https://react.dev/), [Webpack](https://webpack.js.org/), [TypeScript](https://www.typescriptlang.org/)
+* *Package*: [Docker](https://www.docker.com/)
 
-## Screenshots
+## Screenshot
 
-<div align="center">
-    <img src="./asset/screenshots/dashboard.png" width="40%">
-</div>
+![](./asset/reference/app.png)
 
 ## Usage
 
@@ -44,15 +42,16 @@ PORT=4000
 3. Finally run the below.
 
 ```console
-$ npm install
-$ npm run prisma:migrate --workspace=backend 
-$ npm run prisma:seed --workspace=backend 
+$ npm install && npm run prisma:migrate --workspace=backend && npm run prisma:seed --workspace=backend 
+```
 
+4. You can then use any of the following commands to run `Donda`.
+
+```
 $ npm run dev --workspace=backend
 $ npm run dev --workspace=frontend
 $ npm run watch --workspace=extension
 $ npm run build --workspace=extension
-
 $ docker-compose up --build
 ```
 
