@@ -144,6 +144,14 @@ C4Container
 
 For support, please [open an issue](https://github.com/gongahkia/donda/issues) on GitHub.
 
+## Reference
+
+The name `Donda` is in reference to the [10th album](https://en.wikipedia.org/wiki/Donda) of rapper [Kanye West](https://en.wikipedia.org/wiki/Kanye_West), who named it in honour of his late mother [Donda West](https://en.wikipedia.org/wiki/Donda_West).
+
+<div align="center">
+    <img src="./asset/logo/album.webp" width="50%">
+</div>
+
 ## Legal
 
 ### Disclaimer
