@@ -6,5 +6,5 @@ export const queriesRouter = Router();
 
 queriesRouter.use(authMiddleware);
 
-queriesRouter.post("/process", queryController.processQuery);
-queriesRouter.get("/", queryController.getUserQueries);
+queriesRouter.post("/", queryController.createQuery);
+queriesRouter.get("/", queryController.getQueries);

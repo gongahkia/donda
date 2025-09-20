@@ -6,4 +6,5 @@ export const websitesRouter = Router();
 
 websitesRouter.use(authMiddleware);
 
-websitesRouter.get("/analyze", websiteController.analyzeWebsite);
+websitesRouter.post("/analyze", websiteController.analyzeWebsite);
+websitesRouter.get("/:domain", websiteController.getWebsite);
