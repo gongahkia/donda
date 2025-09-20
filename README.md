@@ -2,14 +2,10 @@
 
 # `Donda`
 
-"Your AI-powered web assistant."
-
-## Rationale
-
-`Donda` is an intelligent web assistant designed to streamline complex online tasks and enhance user productivity. It leverages AI to understand user intent, guide through multi-step workflows, and automate interactions with web pages. From data extraction to guided form filling, Donda aims to simplify repetitive processes and make the web more accessible and efficient for everyone.
+`Donda` is an AI Agent-based Web Assistant that automates the mundanity out of your life.
 
 <div align="center">
-    <img src="./asset/logo/donda-logo.webp" width="35%">
+    <img src="./asset/reference/root.webp" width="50%">
 </div>
 
 ## Stack
@@ -31,57 +27,34 @@
 
 The below instructions are for locally hosting `Donda`.
 
-1.  **Clone the repository and install dependencies:**
+1. First execute the below.
 
-    ```console
-    $ git clone https://github.com/gongahkia/donda.git
-    $ cd donda
-    $ npm install # Or pnpm install if using pnpm workspaces
-    ```
+```console
+$ git clone https://github.com/gongahkia/donda && cd donda
+```
 
-2.  **Set up environment variables:**
-    Create a `.env` file in the root directory and `backend/.env` with the following content:
+2. Then create a `.env` file at `backend/.env` with the following content.
 
-    ```env
-    # .env (root)
-    # No specific root .env variables identified yet, but good practice to mention.
-    # Add any shared environment variables here.
-    ```
+```env
+DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/donda"
+JWT_SECRET="your_jwt_secret_key"
+PORT=4000
+```
 
-    ```env
-    # backend/.env
-    DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/donda"
-    JWT_SECRET="your_jwt_secret_key"
-    PORT=4000
-    ```
+3. Finally run the below.
 
-3.  **Database setup:**
+```console
+$ npm install
+$ npm run prisma:migrate --workspace=backend 
+$ npm run prisma:seed --workspace=backend 
 
-    ```console
-    $ npm run prisma:migrate --workspace=backend # Apply migrations
-    $ npm run prisma:seed --workspace=backend # Seed the database (if a seed script exists)
-    ```
+$ npm run dev --workspace=backend
+$ npm run dev --workspace=frontend
+$ npm run watch --workspace=extension
+$ npm run build --workspace=extension
 
-4.  **Run the applications:**
-
-    ```console
-    # Start the backend API server
-    $ npm run dev --workspace=backend
-
-    # Start the frontend web application
-    $ npm run dev --workspace=frontend
-
-    # Build and watch the browser extension (for development)
-    $ npm run watch --workspace=extension
-    # Or build for production
-    $ npm run build --workspace=extension
-    ```
-
-    To run with Docker:
-
-    ```console
-    $ docker-compose up --build
-    ```
+$ docker-compose up --build
+```
 
 ## Architecture
 
